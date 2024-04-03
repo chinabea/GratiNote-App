@@ -1,0 +1,35 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import HomeScreen from '../screens/HomeScreen';
+import WelcomeScreen from '../screens/WelcomeScreen';
+import LoginScreen from '../screens/LoginScreen';
+import SignUpScreen from '../screens/SignUpScreen';
+import useAuth from '../hooks/useAuth';
+
+const Stack = createStackNavigator();
+
+export default function appNavigation() {
+  const {user} = useAuth();
+  if (user) {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Home'>
+          <Stack.Screen name="HomeScreen" options={{ headerShown: false }} component={HomeScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+    
+  } else {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Welcome'>
+          <Stack.Screen name="Welcome" options={{ headerShown: false }} component={WelcomeScreen} />
+          <Stack.Screen name="Login" options={{ headerShown: false }} component={LoginScreen} />
+          <Stack.Screen name="SignUp" options={{ headerShown: false }} component={SignUpScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
+}
