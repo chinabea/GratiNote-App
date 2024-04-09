@@ -46,7 +46,7 @@ export default function HomeScreen () {
     <Tab.Screen
         name="Profile"
         component={ProfileScreen}
-        options={{
+        options={{ 
         tabBarIcon: ({ color, size }) => (
             <UserIcon color={color} size={size} />  
         ),
@@ -60,9 +60,18 @@ export default function HomeScreen () {
 
 function DefaultScreen() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home Screen</Text>
+      // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      //   <Text>Home Screen</Text>
+      // </View>
+      
+      <View style={{ flex: 1 }}>
+      <View style={{ height: 200, backgroundColor: '#9C7EE2', justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ color: 'white', fontSize: 24 }}>Calendar Component Here</Text>
       </View>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text>Other Content Here</Text>
+      </View>
+  </View>
     );
   }
 
