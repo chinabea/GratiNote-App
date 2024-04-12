@@ -60,25 +60,21 @@ export default function HomeScreen () {
 
 function DefaultScreen() {
     return (
-      // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      //   <Text>Home Screen</Text>
-      // </View>
-      
-      <View style={{ flex: 1 }}>
-      <View style={{ height: 200, backgroundColor: '#9C7EE2', justifyContent: 'center', alignItems: 'center' }}>
-          <Text style={{ color: 'white', fontSize: 24 }}>Calendar Component Here</Text>
-      </View>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Other Content Here</Text>
-      </View>
-  </View>
+        <View className="flex-1">
+            <View className="w-1/8 h-1/2 h-200 justify-center items-center" style={{backgroundColor: '#9C7EE2'}}>
+                <Text className="text-white text-xl">Calendar Component Here</Text>
+            </View>
+            <View className="flex-1 h-200 justify-center items-center">
+                <Text>Other Content Here</Text>
+            </View>
+        </View>
     );
   }
 
 function PostScreen() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Post Screen</Text>
+        <View className="flex-1 justify-center items-center">
+            <Text>Post Screen</Text>
         </View>
     );
 }
@@ -89,12 +85,10 @@ function ProfileScreen() {
     }
     return (
         <SafeAreaView className="flex-1 flex-row justify-center items-center">
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text>Profile Screen</Text> 
-                    <TouchableOpacity onPress={handleLogout} className="p-1 bg-red-400 rounded-lg">
-                        <Text className="text-white text-lg font-bold">Logout</Text>
-                    </TouchableOpacity>
-            </View>
+                <TouchableOpacity onPress={handleLogout} className="p-1 bg-red-400 rounded-lg">
+                    <Text className="text-white text-lg font-bold">Logout</Text>
+                </TouchableOpacity>
         </SafeAreaView>
     );
 }
