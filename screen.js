@@ -1,1 +1,1 @@
-console.log("Screen")
+const pair = "allscreens";
